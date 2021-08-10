@@ -1,0 +1,24 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    width: fit-content;
+}
+
+.color1{
+    width: 150px;
+    height: 150px;
+    background-color: purple;
+}
+
+.color2{
+    width: 150px;
+    height: 150px;
+    background-color: gold;
+}
+
+.row{
+    display: flex;
+}

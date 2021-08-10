@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    width: fit-content;
+    height: fit-content;
+    margin: 0px auto;
+    display: flex;
+}
+
+button{
+    height: 50px;
+    width: 125px;
+    border: 2px solid black;
+    box-shadow: 3px 3px black;
+}
+
+table{
+    border: 2px solid black;
+    width: 400px;
+}

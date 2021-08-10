@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Number Game</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <p>I am thinking of a number between 1 and 100</p>
+    <p>Take a guess!</p>
+    <div class="result">
+        {% if gameResult == userNum + "was the number!" %}
+            <p class="answer">{{ gameResult }}</p>
+            <form action="/reset">
+            <button type="submit" id="button">Play again!</button>
+            </form>
+            <style>
+                .answer{
+                    width: 300px;
+                    height: 350px;
+                    background-color: green;
+                    color: white;
+                    vertical-align: middle;
+                    text-align: center;
+                }
+                .button{
+                    height: 50px;
+                    width: 150px;
+                    border: 3px solid black;
+                    box-shadow: 3px 3px black;
+                }
+            </style>
+        {% elif gameResult == "too low!" %}
+            <p class="answer">{{ gameResult }}</p>
+            <style>
+                .answer{
+                    width: 300px;
+                    height: 350px;
+                    background-color: red;
+                    color: white;
+                    vertical-align: middle;
+                    text-align: center;
+                }
+            </style>
+        {% elif gameResult == "too high!" %}
+            <p class="answer">{{ gameResult }}</p>
+            <style>
+                .answer{
+                    width: 300px;
+                    height: 350px;
+                    background-color: red;
+                    color: white;
+                    vertical-align: middle;
+                    text-align: center;
+                }
+            </style>
+        {% endif %}
+    </div>
+
+    <form action="/formintake" method="post">
+        <input type="text" name="userinput">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

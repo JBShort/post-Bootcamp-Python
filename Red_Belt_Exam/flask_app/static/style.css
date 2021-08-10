@@ -1,0 +1,8 @@
+.maincontent{
+    display: flex;
+    height: fit-content;
+}
+
+.body table{
+    border: 3px solid black;
+}

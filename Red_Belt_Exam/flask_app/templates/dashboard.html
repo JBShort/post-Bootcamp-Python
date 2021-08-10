@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows</title>
+    <link rel="stylesheet" href="/flask_app/static/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Howdy, {{ user.first_name }}!!!</h1>
+        <div class="links">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <div class="body">
+        <h1>All TV Shows</h1>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Network</th>
+                <th>Release Date</th>
+                <th>Actions</th>
+            </tr>
+            {% for tv_show in all_tv_shows %}
+                <tr>
+                    <td>{{ tv_show.title }}</td>
+                    <td>{{ tv_show.network }}</td>
+                    <td>{{ tv_show.release_date }}</td>
+                    <td>
+                        <a href="/show/{{ tv_show.id }}">Show</a>
+                        <a href="/edit/{{ tv_show.id }}">Edit</a>
+                        <a href="/delete/show/{{ tv_show.id }}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <a href="/new">Add a New Show</a>
+    </div>
+</body>
+</html>

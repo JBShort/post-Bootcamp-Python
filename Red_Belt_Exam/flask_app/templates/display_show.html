@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows</title>
+    <link rel="stylesheet" href="/flask_app/static/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1></h1>
+        <div class="links">
+            <a href="/dashboard">TV Shows</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <div class="body">
+        <div class="tvshowtext">
+            <h3>{{ tv_show.title }}</h3>
+            <p>Network: {{ tv_show.network }}</p>
+            <p>Release Date: {{ tv_show.release_date }}</p>
+            <p>Description:</p>
+            <p>{{ tv_show.description }}</p>
+        </div>
+        <div class="postedtext">
+            <p>Posted By: {{ tv_show.user.first_name }} {{ tv_show.user.last_name }}</p>
+        </div>
+    </div>
+</body>
+</html>
